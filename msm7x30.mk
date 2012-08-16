@@ -43,11 +43,9 @@ PRODUCT_COPY_FILES += \
     device/htc/msm7x30-common/firmware/vidc_720p_mp4_enc_mc.fw:system/etc/firmware/vidc_720p_mp4_enc_mc.fw \
     device/htc/msm7x30-common/firmware/vidc_720p_vc1_dec_mc.fw:system/etc/firmware/vidc_720p_vc1_dec_mc.fw 
 
-# media configs
+# media codecs
 PRODUCT_COPY_FILES += \
-    device/htc/msm7x30-common/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/msm7x30-common/audio_policy.conf:system/etc/audio_policy.conf \
-    device/htc/msm7x30-common/audio_effects.conf:system/etc/audio_effects.conf
+    device/htc/msm7x30-common/media_codecs.xml:system/etc/media_codecs.xml
 
 # Camera
 PRODUCT_COPY_FILES += \
@@ -60,8 +58,8 @@ PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-    audio_policy.msm7x30 \
     audio.primary.msm7x30 \
+	audio_policy.conf \
     libaudioutils \
     libtinyalsa
 
