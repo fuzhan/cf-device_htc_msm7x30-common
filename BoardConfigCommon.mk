@@ -52,6 +52,7 @@ WIFI_DRIVER_FW_PATH_P2P := "/system/vendor/firmware/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd/parameters/firmware_path"
 WIFI_DRIVER_MODULE_NAME := bcmdhd
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcmdhd.ko"
+BOARD_LEGACY_NL80211_STA_EVENTS := true
 
 #QCom Display
 BOARD_EGL_CFG := device/htc/msm7x30-common/egl.cfg
@@ -71,7 +72,6 @@ COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB -DQCOM_NO_SECURE_PLAYBACK
 BOARD_NEEDS_MEMORYHEAPPMEM := true
 
 # RIL
-BOARD_USE_NEW_LIBRIL_HTC := true
 BOARD_USES_LEGACY_RIL := true
 
 # QCom Hardware
