@@ -88,6 +88,10 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     libI420colorconvert
 
+# Power HAL
+PRODUCT_PACKAGES += \
+    power.msm7x30
+
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
