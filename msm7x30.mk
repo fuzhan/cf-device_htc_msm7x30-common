@@ -129,5 +129,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 # Hack for adreno blob glitches
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.composition.type=gpu \
     debug.sf.hw=1
+
