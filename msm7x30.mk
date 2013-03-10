@@ -78,7 +78,12 @@ PRODUCT_PACKAGES += \
     libmemalloc \
     liboverlay \
     libQcomUI \
-    libtilerenderer
+    libtilerenderer \
+    libdashplayer
+
+#wireless
+PRODUCT_PACKAGES += \
+    libnetcmdiface
 
 # Media
 PRODUCT_PACKAGES += \
@@ -131,5 +136,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 # Hack for adreno blob glitches
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.hw=1
-
+    debug.composition.type=gpu \
+    debug.sf.hw=1 \
+    debug.egl.hw=1
