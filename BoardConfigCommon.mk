@@ -42,6 +42,7 @@ TARGET_KRAIT_BIONIC_PLDSIZE := 64
 
 TARGET_SPECIFIC_HEADER_PATH := device/htc/msm7x30-common/include
 
+ifeq ($(BOARD_7X30_USES_COMMON_BCMDHD_DEFINES),true)
 # Merged Wifi Defines
 WIFI_BAND := 802_11_ABGN
 WPA_SUPPLICANT_VERSION := VER_0_8_X
@@ -57,6 +58,7 @@ WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd/parameters/firmware_path"
 WIFI_DRIVER_MODULE_NAME := bcmdhd
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcmdhd.ko"
 BOARD_LEGACY_NL80211_STA_EVENTS := true
+endif
 
 #QCom Display
 BOARD_EGL_CFG := device/htc/msm7x30-common/egl.cfg
