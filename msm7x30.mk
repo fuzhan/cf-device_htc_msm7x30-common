@@ -50,7 +50,9 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_COPY_FILES += \
-    device/htc/msm7x30-common/prebuilt/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so
+    device/htc/msm7x30-common/prebuilt/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so \
+    device/htc/msm7x30-common/prebuilt/libcameraservice.so:system/lib/libcameraservice.so \
+    device/htc/msm7x30-common/prebuilt/libcameraservice.so:obj/lib/libcameraservice.so
 
 # hostapd prebuilts
 PRODUCT_COPY_FILES += \
