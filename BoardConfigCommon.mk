@@ -23,12 +23,12 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH := arm
+TARGET_ARCH_VARIANT_CPU := cortex-a9
+TARGET_ARCH_VARIANT_FPU := neon
 TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
 ARCH_ARM_HAVE_VFP := true
 ARCH_ARM_HAVE_NEON := true
-USE_MALLOC_ALIGNMENT := 16
-TARGET_HAVE_TSLIB := false
 
 TARGET_EXTRA_CFLAGS += $(call cc-option,-march=armv7-a -mtune=cortex-a9)
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mcpu=cortex-a9 -mtune=cortex-a9 -mfloat-abi=softfp
