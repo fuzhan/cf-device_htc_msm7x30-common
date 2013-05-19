@@ -76,8 +76,7 @@ PRODUCT_PACKAGES += \
     libmemalloc \
     liboverlay \
     libQcomUI \
-    libtilerenderer \
-    libdashplayer
+    libtilerenderer
 
 #wireless
 PRODUCT_PACKAGES += \
