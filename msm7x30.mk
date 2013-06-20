@@ -78,10 +78,6 @@ PRODUCT_PACKAGES += \
     libQcomUI \
     libtilerenderer
 
-#wireless
-PRODUCT_PACKAGES += \
-    libnetcmdiface
-
 # Media
 PRODUCT_PACKAGES += \
     libOmxCore \
