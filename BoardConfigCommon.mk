@@ -32,7 +32,29 @@ ARCH_ARM_HAVE_NEON := true
 TARGET_CPU_VARIANT := cortex-a9
 TARGET_ARCH_VARIANT_FPU := neon
 
-TARGET_SPECIFIC_HEADER_PATH := device/htc/msm7x30-common/include
+TARGET_EXTRA_CFLAGS += $(call cc-option,-march=armv7-a -mtune=cortex-a8)
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
+TARGET_USE_SCORPION_PLD_SET := true
+TARGET_SCORPION_BIONIC_PLDOFFS := 6
+TARGET_SCORPION_BIONIC_PLDSIZE := 128
+
+# Merged Wifi Defines
+WIFI_BAND := 802_11_ABGN
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_WLAN_DEVICE := bcmdhd
+WIFI_DRIVER_FW_PATH_STA := "/system/vendor/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_AP := "/system/vendor/firmware/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_P2P := "/system/vendor/firmware/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/bcmdhd/parameters/firmware_path"
+WIFI_DRIVER_MODULE_NAME := bcmdhd
+WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcmdhd.ko"
+BOARD_LEGACY_NL80211_STA_EVENTS := true
 
 BOARD_VOLD_MAX_PARTITIONS := 36
 
@@ -71,12 +93,13 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_HAVE_HTC_AUDIO := true
 BOARD_PREBUILT_LIBAUDIO := false
+TARGET_QCOM_AUDIO_VARIANT := caf
+TARGET_QCOM_MEDIA_VARIANT := caf
 #BOARD_HAVE_QCOM_FM := true
 #BOARD_USES_QCOM_AUDIO_LPA := true
 #BOARD_USES_QCOM_AUDIO_RESETALL := true
 #BOARD_USES_QCOM_AUDIO_SPEECH := true
 #BOARD_USES_QCOM_AUDIO_VOIPMUTE := true
-TARGET_QCOM_AUDIO_VARIANT := caf
 
 # Boot Animation
 TARGET_BOOTANIMATION_PRELOAD := true
