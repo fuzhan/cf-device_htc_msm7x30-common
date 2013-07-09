@@ -97,29 +97,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    VisualizationWallpapers \
-    librs_jni
-
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-    make_ext4fs \
-    setup_fs
-
-# we have enough storage space to hold precise GC data
-PRODUCT_TAGS += dalvik.gc.type-precise
-
-# use high-density artwork where available
-PRODUCT_LOCALES += hdpi
-
-PRODUCT_AAPT_CONFIG := normal hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
-
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-
 # Hack for adreno blob glitches
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.composition.type=gpu \
