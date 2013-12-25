@@ -50,13 +50,11 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_COPY_FILES += \
-    device/htc/msm7x30-common/prebuilt/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so \
-    device/htc/msm7x30-common/prebuilt/libcameraservice.so:system/lib/libcameraservice.so
+    device/htc/msm7x30-common/prebuilt/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so
 
-# hostapd prebuilts
+# adb hack
 PRODUCT_COPY_FILES += \
-    device/htc/msm7x30-common/prebuilt/hostapd:system/bin/hostapd \
-    device/htc/msm7x30-common/prebuilt/hostapd_cli:system/bin/hostapd_cli
+    device/htc/msm7x30-common/prebuilt/20fixup:system/etc/init.d/20fixup
 
 PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
 
@@ -64,7 +62,7 @@ PRODUCT_PACKAGE_OVERLAYS += device/htc/msm7x30-common/overlay
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.primary.msm7x30 \
-    audio.usb.default \
+    audio_policy.msm7x30 \
     libaudioutils \
     libtinyalsa
 
@@ -79,6 +77,14 @@ PRODUCT_PACKAGES += \
     libQcomUI \
     libtilerenderer
 
+#wireless
+PRODUCT_PACKAGES += \
+    libnetcmdiface
+
+# Power HAL
+PRODUCT_PACKAGES += \
+    power.msm7x30
+
 # Media
 PRODUCT_PACKAGES += \
     libOmxCore \
@@ -89,15 +95,18 @@ PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libstagefrighthw
 
-# Power HAL
-PRODUCT_PACKAGES += \
-    power.msm7x30
-
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
-# Hack for adreno blob glitches
+# Torch
+PRODUCT_PACKAGES += \
+    Torch
+
+# DeviceSettings
+PRODUCT_PACKAGES += \
+    DeviceSettings
+
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.composition.type=gpu \
     debug.sf.hw=1 \
