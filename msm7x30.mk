@@ -77,7 +77,11 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-	libnetcmdiface
+	libnetcmdiface \
+	libwpa_client \
+	hostapd \
+	wpa_supplicant \
+	wpa_supplicant.conf
 
 # HAL
 PRODUCT_PACKAGES += \
